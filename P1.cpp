@@ -14,7 +14,7 @@ int main() {
     if(promedio >= 70) {
         cout << "El siguiente alumno esta aprobado" << endl;
     } else {
-        cout << "Elsiguiente alumno esta reprobado" << endl;
+        cout << "El siguiente alumno esta reprobado" << endl;
     }
 
     return 0;
