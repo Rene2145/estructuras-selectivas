@@ -1,33 +1,37 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
-    int edad;
+    int edad, pulsaciones;
     char sexo;
-    int pulsaciones;
-    cout<<">>>==============================<<<"<<endl;
-	cout<<"          AEROBISLUD 10S"<<endl;
-	cout<<"         monitor de pulso"<<endl;
-	cout<<">>>==============================<<<"<<endl;
-	cout<<""<<endl;
-    cout << "Porfavor, ingrese su edad: "<<endl;
+
+    cout << ">>>==============================<<<" << endl;
+    cout << "          AEROBISLUD 10S" << endl;
+    cout << "         Monitor de Pulso" << endl;
+    cout << ">>>==============================<<<\n" << endl;
+
+    cout << "Por favor, ingrese su edad: ";
     cin >> edad;
+
     if (edad <= 0) {
-        cout << "¡Tu edad es incorrecta!"<<endl<<"No podemos calcular tus pulsaciones."<< endl;
-        }else{
-        	cout << "Ahora, ingrese su sexo: "<<endl;
-    		cout<<"1 <- Masculino"<<endl;
-    		cout<<"2 <- Femenino"<<endl;
-    		cin >> sexo;
-    		if( sexo == '1') {
-        	pulsaciones = (220 - edad) / 10.0;
-        	cout << "¡Listo, amigo! Considerando tu edad el numero de pulsaciones que debes alcanzar es de " << pulsaciones <<"."<<endl;
-   			} else {
-        		pulsaciones = (210 - edad) / 10.0;
-        	cout << "Muy bien amiga, Considerando tu edad el numero de pulsaciones que debes alcanzar es de " << pulsaciones <<"."<<endl;
-    		}    
-		}
-    
+        cout << "\nEdad invalida!\nNo se puede calcular las pulsaciones." << endl;
+        return 1;
+    }
+
+    cout << "\nIngrese su sexo:\n";
+    cout << "1 <- Masculino\n";
+    cout << "2 <- Femenino\n";
+    cin >> sexo;
+
+    if (sexo == '1') {
+        pulsaciones = (220 - edad) / 10;
+        cout << "\nListo, amigo! Segun tu edad, debes alcanzar " << pulsaciones << " pulsaciones." << endl;
+    } else if (sexo == '2') {
+        pulsaciones = (210 - edad) / 10;
+        cout << "\nMuy bien amiga. Segun tu edad, debes alcanzar " << pulsaciones << " pulsaciones." << endl;
+    } else {
+        cout << "\nSexo invalido! Debes ingresar '1' o '2'." << endl;
+    }
+
     return 0;
 }
-
